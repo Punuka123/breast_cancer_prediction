@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styless.css') }}" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>Breast Cancer Prediction Database</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Mean Radius</th>
+                    <th>Mean Texture</th>
+                    <th>Mean Perimeter</th>
+                    <th>Mean Area</th>
+                    <th>Mean Smoothness</th>
+                    <th>Mean Compactness</th>
+                    <th>Mean Concavity</th>
+                    <th>Mean Concave Points</th>
+                    <th>Mean Symmetry</th>
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in records %}
+                <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="back-link">
+            <a href="/">← Back to Breast Cancer Prediction</a>
+        </div>
+    </div>
+</body>
+
+</html>
